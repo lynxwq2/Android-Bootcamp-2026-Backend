@@ -3,29 +3,28 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-
-    <changeSet id="2026-01-31--0002-person.xml" author="nvoronov">
+    
+    <changeSet id="2026-02-01--001-employee" author="nvoronov">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="person"/>
+                <tableExists tableName="employee"/>
             </not>
         </preConditions>
-        <createTable tableName="person">
+        <createTable tableName="employee">
             <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints primaryKey="true" />
             </column>
-            <column name="name" type="VARCHAR(100)">
+            <column name="name" type="VARCHAR(10)">
                 <constraints nullable="false"/>
             </column>
-            <column name="email" type="VARCHAR(50)">
-                <constraints nullable="false" unique="true"/>
+            <column name="email" type="VARCHAR(20)">
+                <constraints unique="true" nullable="false"/>
             </column>
-            <column name="department_id" type="BIGINT">
-                <constraints foreignKeyName="id_person_department" nullable="false"
-                             referencedTableName="department"
-                             referencedColumnNames="id"/>
+            <column name="rented_place" type="BIGINT">
+                <constraints foreignKeyName="fk_place_id"
+                referencedTableName="place"
+                referencedColumnNames="id"/>
             </column>
         </createTable>
     </changeSet>
-
 </databaseChangeLog>

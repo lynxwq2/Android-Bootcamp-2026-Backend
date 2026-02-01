@@ -3,12 +3,10 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-
-    <changeSet id="2026-01-31--0001-department-data" author="nvoronov">
-        <loadData tableName="department" file="db.changelog/data/csv/2026-01-31--0001-department-data.csv"
-                  separator=";"
-                  quotchar='"'
-                  encoding="UTF-8"/>
+    <changeSet id="2026-02-01--001-employee-data" author="nvoronov">
+        <loadData tableName="employee" file="db.changelog/data/csv-data/2026-02-01--employee-data.csv"
+        separator=";"
+        quotchar='"'/>
     </changeSet>
-</databaseChangeLog>
 
+</databaseChangeLog>
