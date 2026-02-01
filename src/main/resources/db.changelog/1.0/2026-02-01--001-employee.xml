@@ -20,6 +20,7 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
             <column name="email" type="VARCHAR(20)">
                 <constraints unique="true" nullable="false"/>
             </column>
+<!--            <column name="photo_url" type="VARCHAR(255)"/>-->
             <column name="rented_place" type="BIGINT">
                 <constraints foreignKeyName="fk_place_id"
                 referencedTableName="place"
