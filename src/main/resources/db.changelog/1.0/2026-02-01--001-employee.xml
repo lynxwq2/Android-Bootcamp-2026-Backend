@@ -28,4 +28,31 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="2026-02-07--001-employee-password" author="nvoronov">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="employee"/>
+            <not>
+                <columnExists tableName="employee" columnName="password"/>
+            </not>
+        </preConditions>
+        <addColumn tableName="employee">
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+<changeSet id="2026-02-07--002-employee-username" author="nvoronov">
+<preConditions onFail="MARK_RAN">
+    <tableExists tableName="employee"/>
+    <not>
+        <columnExists tableName="employee" columnName="username"/>
+    </not>
+</preConditions>
+<addColumn tableName="employee">
+    <column name="username" type="VARCHAR(100)">
+        <constraints nullable="false" unique="true"/>
+    </column>
+</addColumn>
+</changeSet>
 </databaseChangeLog>

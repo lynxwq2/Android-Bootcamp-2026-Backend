@@ -6,10 +6,15 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <include file="db.changelog/1.0/2026-02-01--002-place.xml"/>
     <include file="db.changelog/1.0/2026-02-01--001-employee.xml"/>
+    <include file="db.changelog/1.0/2026-02-08--003-authority.xml"/>
+    <include file="db.changelog/1.0/2026-02-08--004-employee-authority.xml"/>
 
 
 <!--    Файлы с данными:-->
     <include file="db.changelog/data/2026-02-01--002-place-data.xml"/>
     <include file="db.changelog/data/2026-02-01--001-employee-data.xml"/>
+    <include file="db.changelog/data/2026-02-08--003-authority-data.xml"/>
+    <include file="db.changelog/data/2026-02-08--004-employee-authority-data.xml"/>
 
+<!--    Points of Authority :D-->
 </databaseChangeLog>

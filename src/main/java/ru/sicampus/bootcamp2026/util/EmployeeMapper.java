@@ -12,7 +12,7 @@ public class EmployeeMapper {
         employeeDTO.setId(employee.getId());
         employeeDTO.setName(employee.getName());
         employeeDTO.setEmail(employee.getEmail());
-        employeeDTO.setName(employee.getPlace().getName());
+        employeeDTO.setPlaceName(employee.getPlace().getName());
         return employeeDTO;
     }
 }

@@ -2,6 +2,8 @@ package ru.sicampus.bootcamp2026.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
+import ru.sicampus.bootcamp2026.dto.EmployeeDTO;
 
 import java.sql.Date;
 import java.util.List;
@@ -20,6 +22,7 @@ public class Place {
 
     @Column(name = "time")
     private Date time;
+
 
     @OneToMany(mappedBy = "place", cascade = CascadeType.ALL)
     private List<Employee> employees;

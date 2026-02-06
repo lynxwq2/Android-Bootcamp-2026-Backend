@@ -1,3 +1,3 @@
-name;email;rented_place
-Anna N.;example@meow.ru;2
-Nikolay V.;input@meow.ru;1
+name;username;email;rented_place;password
+Anna N.;annav;example@meow.ru;2;c2Vua28K
+Nikolay V.;kolyav;input@meow.ru;1;c2hpcm8=

@@ -1,7 +1,7 @@
 package ru.sicampus.bootcamp2026.service;
 
 import ru.sicampus.bootcamp2026.dto.EmployeeDTO;
-import ru.sicampus.bootcamp2026.entity.Employee;
+import ru.sicampus.bootcamp2026.dto.EmployeeRegDTO;
 
 import java.util.List;
 
@@ -10,9 +10,11 @@ public interface EmployeeService {
 
     EmployeeDTO getEmployeeById(Long id);
 
-    EmployeeDTO createEmployee(EmployeeDTO dto);
+    EmployeeDTO createEmployee(EmployeeRegDTO dto);
 
     EmployeeDTO updateEmployee(Long id, EmployeeDTO dto);
 
-    void deleteEmployee(long id);
+    void deleteEmployee(Long id);
+
+    EmployeeDTO getEmployeeByUsername(String username);
 }
