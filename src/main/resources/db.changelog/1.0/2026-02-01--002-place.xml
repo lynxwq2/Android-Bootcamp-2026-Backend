@@ -8,11 +8,11 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
             <column name="id" autoIncrement="true" type="BIGINT">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="name"  type="VARCHAR(10)">
+            <column name="name"  type="VARCHAR(255)">
                 <constraints nullable="false" unique="true"/>
             </column>
             <column name="time" type="date">
-                <constraints unique="true" nullable="false"/>
+                <constraints unique="false" nullable="false"/>
             </column>
         </createTable>
     </changeSet>

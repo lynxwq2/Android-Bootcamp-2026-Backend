@@ -1,6 +1,8 @@
 package ru.sicampus.bootcamp2026.service.implemantation;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.sicampus.bootcamp2026.dto.EmployeeDTO;
@@ -79,12 +81,13 @@ public class EmployeeServiceImpl implements EmployeeService {
                .orElseThrow(() -> new EmployeeNotFoundExc("Employee not found!"));
 
        if(employeeRepository.findByUsername(dto.getUsername()).isPresent()){
-           throw new EmployeeAlreadyExExc("Employee alread exists");
+           throw new EmployeeAlreadyExExc("Employee already exists");
        }
 
        employee.setName(dto.getName());
        employee.setEmail(dto.getEmail());
        employee.setUsername(dto.getUsername());
+       employee.setPhotoUrl(dto.getPhotoUrl());
        Optional<Place> place = placeRepository.findByName(dto.getPlaceName());
        place.ifPresent(employee::setPlace);
 
@@ -104,5 +107,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new EmployeeNotFoundExc("Employee not found((");
         }
         return EmployeeMapper.convertToDTO(optionalEmployee.get()) ;
+    }
+
+    @Override
+    public Page<EmployeeDTO> getAllEmployeePaginated(Pageable pageable) {
+        return employeeRepository.findAll(pageable).map(EmployeeMapper::convertToDTO);
     }
 }

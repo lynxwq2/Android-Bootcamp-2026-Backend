@@ -8,6 +8,6 @@ public class EmployeeDTO {
     private String name;
     private String username;
     private String email;
+    private String photoUrl;
     private String placeName;
-
 }

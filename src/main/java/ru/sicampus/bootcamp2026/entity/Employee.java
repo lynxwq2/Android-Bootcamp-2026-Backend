@@ -28,6 +28,10 @@ public class Employee implements UserDetails {
     @Column(name = "email")
     private String email;
 
+
+    @Column(name = "photo_url")
+    private String photoUrl;
+
     @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "rented_place", nullable = false)

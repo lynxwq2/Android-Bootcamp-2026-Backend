@@ -12,6 +12,9 @@ public class EmployeeMapper {
         employeeDTO.setId(employee.getId());
         employeeDTO.setName(employee.getName());
         employeeDTO.setEmail(employee.getEmail());
+        employeeDTO.setUsername(employee.getUsername());
+        employeeDTO.setPhotoUrl(employee.getPhotoUrl());
+
         employeeDTO.setPlaceName(employee.getPlace().getName());
         return employeeDTO;
     }
