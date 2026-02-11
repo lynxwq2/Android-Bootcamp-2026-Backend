@@ -28,7 +28,7 @@ public class Employee implements UserDetails {
     @Column(name = "email")
     private String email;
 
-
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "rented_place", nullable = false)
     private Place place;

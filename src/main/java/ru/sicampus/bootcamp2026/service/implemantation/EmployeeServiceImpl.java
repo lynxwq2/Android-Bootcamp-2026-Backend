@@ -69,7 +69,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setEmail(dto.getEmail());
         employee.setPlace(optionalPlace.get());
         employee.setPassword(passwordEncoder.encode(dto.getPassword()));
-
         employee.setAuthorities(Set.of(roleUser.get()));
         return EmployeeMapper.convertToDTO(employeeRepository.save(employee));
     }

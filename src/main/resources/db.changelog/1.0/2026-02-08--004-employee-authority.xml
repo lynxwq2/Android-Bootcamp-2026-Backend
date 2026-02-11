@@ -8,19 +8,20 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="employee_authority"/>
+                <tableExists tableName="employee_authorities"/>
             </not>
         </preConditions>
-        <createTable tableName="employee_authority">
+
+        <createTable tableName="employee_authorities">
             <column name="id" autoIncrement="true" type="BIGINT">
-                <constraints nullable="false"/>
+                <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="employee_id" type="BIGINT">
-                <constraints foreignKeyName="employee_id" referencedTableName="employee"
+                <constraints nullable="false" foreignKeyName="fk_employee_id" referencedTableName="employee"
                 referencedColumnNames="id"/>
             </column>
-            <column name="authority_id" type="BIGINT">
-                <constraints foreignKeyName="authority_id" referencedTableName="authority"
+            <column name="authorities_id" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_authority_id" referencedTableName="authority"
                              referencedColumnNames="id"/>
             </column>
         </createTable>

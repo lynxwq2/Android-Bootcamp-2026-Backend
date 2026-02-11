@@ -5,7 +5,7 @@
 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="db.changelog/data/2026-02-08--004-employee-authority-data" author="nvoronov">
-        <loadData tableName="employee_authority" file="db.changelog/data/csv-data/2026-02-08--004-employee-authority-data.csv"
+        <loadData tableName="employee_authorities" file="db.changelog/data/csv-data/2026-02-08--004-employee-authority-data.csv"
                   separator=";"
                   quotchar='"'
                   encoding="UTF-8"/>

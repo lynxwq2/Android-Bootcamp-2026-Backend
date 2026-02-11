@@ -33,12 +33,12 @@ public class WebSeurityConfig {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/h2-console").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/api/employee/register").permitAll()
                         .requestMatchers("/api/employee/username/{username}").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/employee/**").hasAnyAuthority("ROLE_ADMIN")
                         .requestMatchers("api/employee/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-//                        .anyRequest().authenticated()
+                        .anyRequest().authenticated()
                 )
                 .httpBasic(httpBase -> {})
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable));

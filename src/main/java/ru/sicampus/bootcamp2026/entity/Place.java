@@ -3,6 +3,7 @@ package ru.sicampus.bootcamp2026.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+import org.apache.commons.lang3.builder.ToStringExclude;
 import ru.sicampus.bootcamp2026.dto.EmployeeDTO;
 
 import java.sql.Date;
@@ -23,7 +24,7 @@ public class Place {
     @Column(name = "time")
     private Date time;
 
-
+    @ToStringExclude
     @OneToMany(mappedBy = "place", cascade = CascadeType.ALL)
     private List<Employee> employees;
 }

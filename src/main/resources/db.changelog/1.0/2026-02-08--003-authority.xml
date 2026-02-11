@@ -15,7 +15,7 @@ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column type="VARCHAR(20)" name="authority">
+            <column type="VARCHAR(100)" name="authority">
                 <constraints nullable="false" unique="true"/>
             </column>
         </createTable>
