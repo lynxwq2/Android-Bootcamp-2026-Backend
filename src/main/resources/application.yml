@@ -1,17 +1,51 @@
 spring:
+  profiles:
+    active: local
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
   datasource:
     url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
 
   h2:
     console:
       enabled: true
-
-  liquibase:
-    enabled: true
-    change-log: classpath:db.changelog/db.changelog-master.xml
-
   jpa:
-    generate-ddl: false
-  hibernate:
-    ddl-auto: none
-  show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/bootcamp_db
+    username: bootcamp
+    password: senko
+    driver-class-name: org.postgresql.Driver
+
+  h2:
+    console:
+      enabled: false
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect

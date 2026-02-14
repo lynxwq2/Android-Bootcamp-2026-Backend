@@ -55,7 +55,7 @@ public class EmployeeController {
     @GetMapping("/username/{username}")
     public ResponseEntity<String> getByUsername(@PathVariable String username){
         EmployeeDTO employeeDTO = employeeService.getEmployeeByUsername(username);
-        return ResponseEntity.ok("User" + employeeDTO.getUsername() + "is registered");
+        return ResponseEntity.ok("User " + employeeDTO.getUsername() + " is registered");
     }
 
     @GetMapping("/paginated")
