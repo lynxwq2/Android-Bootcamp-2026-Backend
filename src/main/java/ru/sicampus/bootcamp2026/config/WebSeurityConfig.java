@@ -20,6 +20,7 @@ public class WebSeurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
+
         return new BCryptPasswordEncoder();
     }
 

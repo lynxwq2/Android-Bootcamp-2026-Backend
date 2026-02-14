@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+docker-compose.yml
+Dockerfile
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
